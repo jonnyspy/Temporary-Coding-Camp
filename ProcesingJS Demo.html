@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Processing.Js Demo</title>
+	<script src="processing.js"></script>
+</head>
+<body>
+	<h1>Processing.js Demonstration</h1>
+	<p>Not supported anymore but information can be found on Wikipedia <a href="https://en.wikipedia.org/wiki/Processing.js">Processing.js</a> </p>
+	<canvas id="processing-canvas" width="500" height="500" style="border-style: solid"> </canvas>
+	
+	<script type="text/processing" data-processing-target="processing-canvas">
+
+		var x = 130;
+
+		void keyPressed() {
+			if (keyCode === RIGHT) {
+				x++;
+			} else if (keyCode === LEFT) {
+				x--;
+			}
+		}
+
+		draw = function() {
+			fill(255, 0, 0);
+			background(255, 200, 200);
+			text('Hello World', x, 100);
+		}
+
+	</script>
+
+</body>
+</html>
