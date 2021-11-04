@@ -5,27 +5,43 @@
   </head>
   <body>
 <script type="text/processing" data-processing-target="processing-canvas">
-  var playerName = 'Nathan Bunker'; 
-  void setup() {
-    size(600, 600);
-  } 
-var x = 130;
-
-void keyPressed() {
-	if (keyCode === RIGHT) {
-		x++;
-	} else if (keyCode === LEFT) {
-		x--;
+	void setup() {
+	  size(600,600);
+	  //playerImg = loadImage("Toyokawa.jpg");
 	}
-}
+
+	
+	
+	var playerX = 200;
+	var playerY = 200;
+	var playerXSpeed = 0;
+	var playerYSpeed = 0;
+	
+	function Player() {
+		fill(0,0,0);
+		rect(playerX,playerY,20,20);
+		playerX += playerXSpeed;
+		playerY += playerYSpeed;
+	};
+	
+	
 
 
-
-draw = function() {
-	fill(255, 0, 0);
-	background(255, 200, 200);
-	text('Hello World', x, 100);
-}
+	draw = function() {
+		background(255, 200, 200);
+		
+		Player();
+	}
+	
+	void keyPressed() {
+		if (keyCode === RIGHT) {
+			playerXSpeed+=0.1;
+		} else if (keyCode === LEFT) {
+			playerXSpeed-=0.1;
+		}
+	}
+	
+	
 </script>
 <canvas id="processing-canvas"> </canvas>
   </body>
