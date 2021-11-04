@@ -1,6 +1,0 @@
-export function type(text) {
-  window.print(text);
-}
-export function create_block(x,y) {
-  
-}
