@@ -28,6 +28,6 @@
 
 
 	draw = function() {
-		background(255, 200, 200);
+		background(0, 0, 200);
 		drawPlayer();
 	}
