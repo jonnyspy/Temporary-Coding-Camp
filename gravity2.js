@@ -12,6 +12,9 @@
 		}
 	}
 	
+	function drawBlock(x,y,type) {
+	}
+	
 	var playerX = 200;
 	var playerY = 200;
 	var playerXSpeed = 0;
@@ -19,5 +22,6 @@
 	var gravity = 1;
 	
 	var blocks = [];
+
 	
 	

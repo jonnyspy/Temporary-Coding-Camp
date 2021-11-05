@@ -4,7 +4,7 @@
 	function drawPlayer() {
 		fill(0,0,0);
 		rect(playerX,playerY,20,20);
-		
+		image(img, playerX-50, playerY-50, 100, 100);
 		
 		playerYSpeed += gravity;
 		playerX += playerXSpeed;
@@ -25,8 +25,8 @@
 		  playerYSpeed = -playerYSpeed;
 		}
 		else if (playerY > 600 - 20) {
-		  playerY = 600 - 20;
-		  playerYSpeed = -playerYSpeed;
+			playerY = 600 - 20;
+			playerYSpeed = -playerYSpeed;
 		}
 		
 		
@@ -36,8 +36,9 @@
 
 	draw = function() {
 		background(0, 0, 200);
+		image(img2, 0, 0, 600, 600);
 		drawPlayer();
 		
-		image(img, 0, 0, width/20, height/20);
+		
 		
 	}
