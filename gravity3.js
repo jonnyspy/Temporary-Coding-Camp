@@ -37,6 +37,8 @@
 	draw = function() {
 		background(0, 0, 200);
 		image(img2, 0, 0, 600, 600);
+		
+		
 		drawPlayer();
 		
 		
