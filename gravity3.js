@@ -4,8 +4,11 @@
 	function drawPlayer() {
 		fill(0,0,0);
 		rect(playerX,playerY,20,20);
+		
+		PlayerYSpeed += gravity;
 		playerX += playerXSpeed;
 		playerY += playerYSpeed;
+		
 		if (playerX < 0)
 		{
 		  playerX = 0;
@@ -25,11 +28,13 @@
 		  playerYSpeed = -playerYSpeed;
 		}
 		
-		PlayerYSpeed += gravity;
+		
+		
 	};
 
 
 	draw = function() {
 		background(0, 0, 200);
 		drawPlayer();
+		
 	}
