@@ -16,4 +16,4 @@
 	var playerY = 200;
 	var playerXSpeed = 0;
 	var playerYSpeed = 0;
-	
+	var gravity = 1;

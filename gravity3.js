@@ -24,6 +24,8 @@
 		  playerY = 600 - 20;
 		  playerYSpeed = -playerYSpeed;
 		}
+		
+		PlayerYSpeed += gravity;
 	};
 
 
