@@ -5,7 +5,8 @@
 		fill(0,0,0);
 		rect(playerX,playerY,20,20);
 		
-		PlayerYSpeed += gravity;
+		
+		playerYSpeed += gravity;
 		playerX += playerXSpeed;
 		playerY += playerYSpeed;
 		
@@ -36,5 +37,7 @@
 	draw = function() {
 		background(0, 0, 200);
 		drawPlayer();
+		
+		image(img, 0, 0, width/20, height/20);
 		
 	}

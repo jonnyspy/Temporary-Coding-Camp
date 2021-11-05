@@ -17,3 +17,7 @@
 	var playerXSpeed = 0;
 	var playerYSpeed = 0;
 	var gravity = 1;
+	
+	var blocks = [];
+	
+	
