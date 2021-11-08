@@ -17,27 +17,15 @@
 	var playerXSpeed = 0;
 	var playerYSpeed = 0;
 	var gravity = 1;
+	
 	var blockSize = 10;
 	var worldH = 80;
 	var worldW = 80;
 	
+	var playerSize = 10;
 	
-	function drawBlock(x, y, type) {
-		switch (type) {
-			case 0:
-				fill(138, 247, 255);
-				noStroke();
-				rect(x*blockSize,y*blockSize,blockSize,blockSize);
-			break;
-			case 1:
-				fill(100, 100, 100);
-				noStroke();
-				rect(x*blockSize,y*blockSize,blockSize,blockSize);
-			break;
-
-			
-		}
-	};
+	
+	
 	
 	var field = [
 	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
