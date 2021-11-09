@@ -3,7 +3,7 @@
 	
 	function drawPlayer() {
 		fill(255,0,0);
-		stroke(0,0,0);
+		noStroke();
 		rect(playerX,playerY,playerSize,playerSize);
 		
 		playerYSpeed += gravity;
@@ -24,12 +24,40 @@
 		  playerY = 0;
 		  playerYSpeed = 0;
 		}
-		else if (playerY > 800 - playerSize) {
-			playerY = 800 - playerSize;
+		else if (playerY > worldH*blockSize - playerSize) {
+			playerY = worldH*blockSize - playerSize;
 			playerYSpeed = 0;
 		}
+
+		playerXSpeed = playerXSpeed / 1.1;
 		
 		
+		//collision
+		var playerFieldX = round(playerX/blockSize);
+		var playerFieldY = round(playerY/blockSize);
+		
+		
+		if(field[playerFieldY+1][playerFieldX] != 0) {
+			playerY = playerFieldY*blockSize;
+			playerYSpeed = 0;
+			isOnGround = true;
+		}
+		else{isOnGround = false;}
+		
+		if(field[playerFieldY-1][playerFieldX] != 0) {
+			playerY = playerFieldY*blockSize;
+			playerYSpeed = 0;
+
+		}
+		
+		if(field[playerFieldY][playerFieldX] != 0 && playerXSpeed > 0) {
+			playerX = playerFieldX*blockSize-blockSize;
+			playerXSpeed = 0;
+		}
+		if(field[playerFieldY][playerFieldX] != 0 && playerXSpeed < 0) {
+			playerX = playerFieldX*blockSize+blockSize;
+			playerXSpeed = 0;
+		}
 		
 		
 		

@@ -1,15 +1,21 @@
 
-
+	var key = '';
+	var isOnGround = false;
+	
 	void keyPressed() {
+
 		if (keyCode === RIGHT) {
-			playerXSpeed += 0.5;
+			playerXSpeed += 3;
 		} else if (keyCode === LEFT) {
-			playerXSpeed -= 0.5;
-		} else if (keyCode === UP) {
+			playerXSpeed -= 3;
+			
+		} else if (keyCode === UP && isOnGround) {
 			playerYSpeed = -10;
 		} else if (keyCode === DOWN) {
 			playerYSpeed -= -0.1;
 		}
+
+		key = keyCode;
 	}
 	
 	var playerX = 200;
