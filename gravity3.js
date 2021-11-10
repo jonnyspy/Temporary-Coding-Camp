@@ -33,31 +33,42 @@
 		
 		
 		//collision
-		var playerFieldX = round(playerX/blockSize);
-		var playerFieldY = round(playerY/blockSize);
 		
 		
-		if(field[playerFieldY+1][playerFieldX] != 0) {
-			playerY = playerFieldY*blockSize;
-			playerYSpeed = 0;
-			isOnGround = true;
+		if (playerYSpeed > 0) {
+			var playerFieldX = round((playerX)/blockSize);
+			var playerFieldY = round((playerY)/blockSize);
+			if(field[playerFieldY+1][playerFieldX] != 0) {
+				playerY = playerFieldY*blockSize;
+				playerYSpeed = 0;
+				isOnGround = true;
+			}
+			else{isOnGround = false;}
 		}
-		else{isOnGround = false;}
-		
-		if(field[playerFieldY-1][playerFieldX] != 0) {
-			playerY = playerFieldY*blockSize;
-			playerYSpeed = 0;
+		if (playerYSpeed < 0) {
+			var playerFieldX = round((playerX)/blockSize);
+			var playerFieldY = round(playerY/blockSize);
+			if(field[playerFieldY-1][playerFieldX] != 0) {
+				playerYSpeed = 0.2;
 
+			}
 		}
-		
-		if(field[playerFieldY][playerFieldX] != 0 && playerXSpeed > 0) {
-			playerX = playerFieldX*blockSize-blockSize;
-			playerXSpeed = 0;
-		}
-		if(field[playerFieldY][playerFieldX] != 0 && playerXSpeed < 0) {
-			playerX = playerFieldX*blockSize+blockSize;
-			playerXSpeed = 0;
-		}
+		if(playerXSpeed > 0) {
+			var playerFieldX = round((playerX+blockSize/2)/blockSize);
+			var playerFieldY = round(playerY/blockSize);
+			if(field[playerFieldY][playerFieldX] != 0) {
+				playerX = playerFieldX*blockSize-blockSize;
+				playerXSpeed = 0;
+			}
+		};
+		if(playerXSpeed < 0) {
+			var playerFieldX = round((playerX-blockSize/2)/blockSize);
+			var playerFieldY = round(playerY/blockSize);
+			if(field[playerFieldY][playerFieldX] != 0) {
+				playerX = playerFieldX*blockSize+blockSize;
+				playerXSpeed = 0;
+			}
+		};
 		
 		
 		
@@ -85,6 +96,9 @@
 	draw = function() {
 		background(255, 255, 255);
 		
+		field = rooms[room];
+
+		
 		
 		if (worldH > field.length) {
 			worldH = field.length;
@@ -101,6 +115,8 @@
 		};
 		
 		drawPlayer();
+		
+
 		
 		
 		
